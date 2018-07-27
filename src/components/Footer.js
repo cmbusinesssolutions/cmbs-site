@@ -8,6 +8,10 @@ import { faEnvelope, faCaretDown, faTimesCircle } from '@fortawesome/free-solid-
 
 library.add(fab, faEnvelope, faCaretDown, faTimesCircle)
 
+const contactUs = () => {
+  window.location = "/contact"
+}
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -16,7 +20,7 @@ const Footer = () => {
           <div className="cta-text">
             <p>Need help with a challenge you're facing?</p>
           </div>
-          <button id="footer-cta-btn" className="cta-btn contact-btn">CONTACT US</button>
+          <button onClick={contactUs} id="footer-cta-btn" className="cta-btn contact-btn">CONTACT US</button>
         </div>
         <div className="sitemap">
           <div className="sitemap-section">
@@ -39,7 +43,7 @@ const Footer = () => {
             <h3 className="sitemap-heading">Connect</h3>
             <hr className="sitemap-hr" />
             <ul className="list-unstyled">
-              <li><Link to="#" className="contact-btn">Contact Us</Link></li>
+              <li><Link to="/contact" className="contact-btn">Contact Us</Link></li>
               <li>
                 <div className="social-media-icons">
                   <Link to="#" target="_blank">
@@ -49,7 +53,7 @@ const Footer = () => {
                     <FontAwesomeIcon icon={['fab', 'linkedin']} />
                   </Link>
                   <Link to="/contact" className="contact-btn">
-                    <FontAwesomeIcon icon="envelope" />
+                    <FontAwesomeIcon icon={['fab', 'twitter']} />
                   </Link>
                 </div>
               </li>

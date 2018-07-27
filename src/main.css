@@ -877,6 +877,7 @@ p.section-text {
 
 .footer * {
   color: var(--text-primary-color);
+  letter-spacing: 0.12em;
   text-decoration: none;
 }
 
@@ -919,12 +920,19 @@ p.section-text {
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 3rem;
   text-align: left;
-  
+}
+
+.sitemap * {
+  color: var(--overlay-text-color);
+}
+
+.sitemap-heading {
+  font-weight: 400;
 }
 
 .sitemap-hr {
   margin-top: 0.5rem;
-  border-bottom: 2px solid var(--text-primary-color);
+  border-bottom: 1px solid var(--overlay-text-color);
 }
 
 .footer .social-media-group {
