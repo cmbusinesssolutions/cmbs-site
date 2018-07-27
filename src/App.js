@@ -4,6 +4,7 @@ import { hot } from 'react-hot-loader'
 //
 import Routes from 'react-static-routes'
 import Nav from './components/Nav'
+import Footer from './components/Footer'
 
 import './main.css'
 
@@ -14,6 +15,7 @@ const App = () => (
       <div className="content">
         <Routes />
       </div>
+      <Footer />
     </div>
   </Router>
 )
