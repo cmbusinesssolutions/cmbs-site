@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Link } from 'react-static'
+import { Link } from 'react-static'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,11 +8,8 @@ import { faEnvelope, faCaretDown, faTimesCircle } from '@fortawesome/free-solid-
 
 library.add(fab, faEnvelope, faCaretDown, faTimesCircle)
 
-import '../main.css'
-
 const sideMenu = document.getElementById('side-menu')
 console.log(sideMenu)
-
 
 const openSlideMenu = (e) => {
   e.preventDefault()
@@ -27,7 +24,6 @@ const closeSlideMenu = (e) => {
 class Nav extends Component {
   constructor() {
     super();
-
     this.state = {
       showMenu: false,
     };
@@ -38,20 +34,16 @@ class Nav extends Component {
 
   showMenu(event) {
     event.preventDefault();
-
     this.setState({ showMenu: true }, () => {
       document.addEventListener('click', this.closeMenu);
     });
   }
 
   closeMenu(event) {
-
     if (!this.dropdownMenu.contains(event.target)) {
-
       this.setState({ showMenu: false }, () => {
         document.removeEventListener('click', this.closeMenu);
       });
-
     }
   }
 
@@ -111,14 +103,11 @@ class Nav extends Component {
                   </ul>
                 )
               }
-              
-
             </li>
             <li className="side-nav-link"><Link to="/about" >About</Link></li>
             <li className="side-nav-link"><Link to="/contact" className="contact-btn">Contact</Link></li>
           </ul>
         </div>
-
       </div>
     )
   }
