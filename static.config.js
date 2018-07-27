@@ -16,6 +16,22 @@ export default {
         component: 'src/containers/About',
       },
       {
+        path: '/software_dev',
+        component: 'src/containers/SoftwareDev',
+      },
+      {
+        path: '/data_services',
+        component: 'src/containers/DataServices',
+      },
+      {
+        path: '/cio',
+        component: 'src/containers/CIO',
+      },
+      {
+        path: '/contact',
+        component: 'src/containers/Contact',
+      },
+      {
         path: '/blog',
         component: 'src/containers/Blog',
         getData: () => ({
