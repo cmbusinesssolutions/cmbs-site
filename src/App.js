@@ -10,11 +10,6 @@ import './main.css'
 const App = () => (
   <Router>
     <div>
-      {/* <nav>
-        <Link exact to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-      </nav> */}
       <Nav />
       <div className="content">
         <Routes />
