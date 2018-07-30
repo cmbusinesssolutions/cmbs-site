@@ -8,19 +8,6 @@ import { faEnvelope, faCaretDown, faTimesCircle } from '@fortawesome/free-solid-
 
 library.add(fab, faEnvelope, faCaretDown, faTimesCircle)
 
-const sideMenu = document.getElementById('side-menu')
-console.log(sideMenu)
-
-const openSlideMenu = (e) => {
-  e.preventDefault()
-  document.getElementById('side-menu').style.width = '300px';
-}
-
-const closeSlideMenu = (e) => {
-  e.preventDefault()
-  document.getElementById('side-menu').style.width = '0';
-}
-
 class Nav extends Component {
   constructor() {
     super();
@@ -28,21 +15,33 @@ class Nav extends Component {
       showMenu: false,
     };
 
-    this.showMenu = this.showMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
+    this.openSlideMenu = this.openSlideMenu.bind(this)
+    this.closeSlideMenu = this.closeSlideMenu.bind(this)
+    this.showMenu = this.showMenu.bind(this)
+    this.closeMenu = this.closeMenu.bind(this)
   }
 
-  showMenu(event) {
-    event.preventDefault();
+  openSlideMenu = (e) => {
+    e.preventDefault()
+    document.getElementById('side-menu').style.width = '300px'
+  }
+
+  closeSlideMenu = (e) => {
+    e.preventDefault()
+    document.getElementById('side-menu').style.width = '0'
+  }
+
+  showMenu = (e) => {
+    e.preventDefault();
     this.setState({ showMenu: true }, () => {
-      document.addEventListener('click', this.closeMenu);
+      document.addEventListener('click', this.closeMenu)
     });
   }
 
-  closeMenu(event) {
-    if (!this.dropdownMenu.contains(event.target)) {
+  closeMenu = (e) => {
+    if (!this.dropdownMenu.contains(e.target)) {
       this.setState({ showMenu: false }, () => {
-        document.removeEventListener('click', this.closeMenu);
+        document.removeEventListener('click', this.closeMenu)
       });
     }
   }
@@ -67,7 +66,7 @@ class Nav extends Component {
             <li><Link to="/about" className="nav-link">About</Link></li>
             <li><Link to="/contact" className="nav-link contact-btn">Contact</Link></li>
           </ul>
-          <div onClick={openSlideMenu} id="menu-small">&#9776;</div>
+          <div onClick={this.openSlideMenu} id="menu-small">&#9776;</div>
         </nav>
 
         <div id="side-menu" className="side-nav">
@@ -75,7 +74,7 @@ class Nav extends Component {
             <p className="brand">
               <Link exact to="/">CM Business Solutions</Link>
             </p>
-            <FontAwesomeIcon onClick={closeSlideMenu}  id="close-slide" icon={faTimesCircle} />
+            <FontAwesomeIcon onClick={this.closeSlideMenu}  id="close-slide" icon={faTimesCircle} />
           </div>
           <hr />
           <ul>
