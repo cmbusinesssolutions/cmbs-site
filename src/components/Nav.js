@@ -10,10 +10,10 @@ library.add(fab, faEnvelope, faCaretDown, faTimesCircle)
 
 class Nav extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       showMenu: false,
-    };
+    }
 
     this.openSideMenu = this.openSideMenu.bind(this)
     this.closeSideMenu = this.closeSideMenu.bind(this)
