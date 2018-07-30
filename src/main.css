@@ -17,7 +17,7 @@
 
 /* SANS SERIF/SANS SERIF */
 /* Montserrat & Lato */
-@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat:400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Montserrat:400,500,600,700');
 
 /* Open Sans & Open Sans Condensed */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,300i,700');
@@ -857,9 +857,6 @@ p.section-text {
   border-top: 1px solid #BDBDBD;
 }
 
-
-
-
 /*-------footer------*/
 .footer {
   bottom: 0;
@@ -882,7 +879,8 @@ p.section-text {
 }
 
 .footer .cta-text {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .footer a:hover, .footer button:hover{

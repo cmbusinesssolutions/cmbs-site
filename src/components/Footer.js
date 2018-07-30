@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="section section-footer-content">
         <div className="cta-group">
           <div className="cta-text">
-            <p>Need help with a challenge you're facing?</p>
+            <p>How can we help?</p>
           </div>
           <button onClick={contactUs} id="footer-cta-btn" className="cta-btn contact-btn">CONTACT US</button>
         </div>
