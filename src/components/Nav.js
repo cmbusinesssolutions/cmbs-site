@@ -15,18 +15,18 @@ class Nav extends Component {
       showMenu: false,
     };
 
-    this.openSlideMenu = this.openSlideMenu.bind(this)
-    this.closeSlideMenu = this.closeSlideMenu.bind(this)
+    this.openSideMenu = this.openSideMenu.bind(this)
+    this.closeSideMenu = this.closeSideMenu.bind(this)
     this.showMenu = this.showMenu.bind(this)
     this.closeMenu = this.closeMenu.bind(this)
   }
 
-  openSlideMenu = (e) => {
+  openSideMenu = (e) => {
     e.preventDefault()
     document.getElementById('side-menu').style.width = '300px'
   }
 
-  closeSlideMenu = (e) => {
+  closeSideMenu = (e) => {
     e.preventDefault()
     document.getElementById('side-menu').style.width = '0'
   }
@@ -66,15 +66,13 @@ class Nav extends Component {
             <li><Link to="/about" className="nav-link">About</Link></li>
             <li><Link to="/contact" className="nav-link contact-btn">Contact</Link></li>
           </ul>
-          <div onClick={this.openSlideMenu} id="menu-small">&#9776;</div>
+          <div onClick={this.openSideMenu} id="menu-small">&#9776;</div>
         </nav>
 
         <div id="side-menu" className="side-nav">
-          <div className="form-header">
-            <p className="brand">
-              <Link exact to="/">CM Business Solutions</Link>
-            </p>
-            <FontAwesomeIcon onClick={this.closeSlideMenu}  id="close-slide" icon={faTimesCircle} />
+          <div className="side-menu-header">
+            <Link exact to="/" className="brand">CM Business Solutions</Link>     
+            <FontAwesomeIcon icon={faTimesCircle} id="close-side-menu" onClick={this.closeSideMenu} />
           </div>
           <hr />
           <ul>
