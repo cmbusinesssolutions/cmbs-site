@@ -46,6 +46,11 @@ class Contact extends Component {
     // }
     /* Send the message to Firebase */
     firebaseDB.database().ref('messages').push(body);
+    this.setState({ 
+      "name": '',
+      "email": '',
+      "message": ''
+    })
   }
 
   render() {
@@ -60,15 +65,15 @@ class Contact extends Component {
           className="contact-form" 
           name="contact-me">
           <p>
-            <label for="name">Name*</label>
+            <label htmlFor="name">Name*</label>
             <input type="text" name="name" id="name" required />
           </p>
           <p>
-            <label for="email">Email Address*</label>
+            <label htmlFor="email">Email Address*</label>
             <input type="email" name="email" id="email" required />
           </p>
           <p className="full">
-            <label for="message">Message</label>
+            <label htmlFor="message">Message</label>
             <textarea name="message" id="message" rows="5"></textarea>
           </p>
 {/*       
