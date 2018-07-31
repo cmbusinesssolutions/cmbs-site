@@ -1,7 +1,52 @@
 import React, { Component } from 'react';
 //
 
+import firebaseDB from '../firebaseConfig';
+
 class Contact extends Component {
+  constructor() {
+    super()
+    this.state = { messages: [] }
+  }
+
+  componentWillMount() {
+    /* Create reference to messages in Firebase Database */
+    let messagesRef = firebaseDB.database().ref('messages').orderByKey().limitToLast(100);
+    messagesRef.on('child_added', snapshot => {
+      /* Update React state when message is added at Firebase Database */
+      let message = { text: snapshot.val(), id: snapshot.key };
+      this.setState({ messages: [message].concat(this.state.messages) });
+    })
+  }
+
+  submitForm = (e) => {
+    e.preventDefault();
+    // Get input values
+    const name = document.getElementById('name').value
+    const email = document.getElementById('email').value
+    const message = document.getElementById('message').value
+    // const captcha = getInputVal('g-recaptcha-response')
+
+    // if (
+    //   captcha === undefined ||
+    //   captcha === '' ||
+    //   captcha === null
+    // ) {
+    //   alert('Please select CAPTCHA verification')
+    // } else {
+      const body = {
+        "name": name,
+        "email": email,
+        "subject": 'From CMBS.COM',
+        "message": message
+    //     "g-recaptcha-response": captcha
+      }
+    //   // reCAPTCHA verification
+    //   recaptchaRequest(body)
+    // }
+    /* Send the message to Firebase */
+    firebaseDB.database().ref('messages').push(body);
+  }
 
   render() {
     return (
@@ -10,7 +55,10 @@ class Contact extends Component {
           <h2>Contact Us</h2>
           <p>Reach out to us if you need help with your technology and data initiatives.</p>
         </div>
-        <form className="contact-form" name="contact-me">
+        <form 
+          onSubmit={this.submitForm.bind(this)}
+          className="contact-form" 
+          name="contact-me">
           <p>
             <label for="name">Name*</label>
             <input type="text" name="name" id="name" required />
