@@ -15,18 +15,20 @@ class Contact extends Component {
   }
 
   componentDidMount() {
-    if (this.captchaDemo) {
+    if (this.captcha) {
       console.log("started, just a second...")
-      this.captchaDemo.reset();
-      this.captchaDemo.execute();
+      this.captcha.reset();
+      this.captcha.execute();
     }
   }
+
   onLoadRecaptcha() {
     if (this.captcha) {
       this.captcha.reset();
       this.captcha.execute();
     }
   }
+
   verifyCallback(recaptchaToken) {
     // Here you will get the final recaptchaToken!!!  
     console.log(recaptchaToken, "<= your recaptcha token")
