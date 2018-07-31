@@ -17,22 +17,28 @@ class Nav extends Component {
 
     this.openSideMenu = this.openSideMenu.bind(this)
     this.closeSideMenu = this.closeSideMenu.bind(this)
+    this.addCloseMenu = this.addCloseMenu.bind(this)
     this.showMenu = this.showMenu.bind(this)
     this.closeMenu = this.closeMenu.bind(this)
   }
 
   openSideMenu = (e) => {
-    e.preventDefault()
     document.getElementById('side-menu').style.width = '300px'
+    this.addCloseMenu()
   }
 
   closeSideMenu = (e) => {
-    e.preventDefault()
     document.getElementById('side-menu').style.width = '0'
   }
 
+  addCloseMenu = () => {
+    const sideNavLink = document.getElementsByClassName('side-nav-link')
+    for (let i = 0; i < sideNavLink.length; i++) {
+      sideNavLink[i].addEventListener("click", this.closeSideMenu)
+    }
+  }
+
   showMenu = (e) => {
-    e.preventDefault();
     this.setState({ showMenu: true }, () => {
       document.addEventListener('click', this.closeMenu)
     });
