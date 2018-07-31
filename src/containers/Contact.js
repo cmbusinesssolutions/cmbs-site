@@ -4,15 +4,25 @@ import { ReCaptcha } from 'react-recaptcha-google'
 
 import firebaseDB from '../firebaseConfig';
 // import Recaptcha from '../components/Recaptcha'
-
+// const endpoint = "https://elbwov6546.execute-api.us-east-2.amazonaws.com/prod/recaptcha-ms-aws"
+const endpoint = "https://fm087u0lii.execute-api.us-east-2.amazonaws.com/prod/recaptcha-request-api"
 let captchaToken
+
+const transmitFormData = (body) => {
+  fetch(endpoint, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: JSON.stringify(body)
+  })
+    .catch(err => console.log(`Form data transmission error: ${err}`))
+}
 
 class Contact extends Component {
   constructor() {
     super()
     this.state = { messages: [] }
-    this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
-    this.verifyCallback = this.verifyCallback.bind(this);
+    this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this)
+    this.verifyCallback = this.verifyCallback.bind(this)
   }
 
   componentDidMount() {
@@ -62,18 +72,17 @@ class Contact extends Component {
     // ) {
     //   alert('Please select CAPTCHA verification')
     // } else {
-      const body = {
-        "name": name,
-        "email": email,
-        "subject": 'From CMBS.COM',
-        "message": message,
-        "g-recaptcha-response": captcha
-      }
-      console.log(`Body content is: ${body}`)
-
-    // console.log(`The recaptcha token is => ${captchaDemo}`)
-    //   // reCAPTCHA verification
-    //   recaptchaRequest(body)
+    const body = {
+      "name": name,
+      "email": email,
+      "subject": 'From CMBS.COM',
+      "message": message,
+      "g-recaptcha-response": captcha
+    }
+    console.log(`Body content is: ${body}`)
+      
+    // Transmit form data
+    transmitFormData(body)
     // }
     /* Send the message to Firebase */
     firebaseDB.database().ref('messages').push(body)
