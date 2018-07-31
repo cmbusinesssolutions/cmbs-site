@@ -5,6 +5,7 @@ import { ReCaptcha } from 'react-recaptcha-google'
 import firebaseDB from '../firebaseConfig';
 // import Recaptcha from '../components/Recaptcha'
 
+let captchaToken
 
 class Contact extends Component {
   constructor() {
@@ -32,6 +33,7 @@ class Contact extends Component {
   verifyCallback(recaptchaToken) {
     // Here you will get the final recaptchaToken!!!  
     console.log(recaptchaToken, "<= your recaptcha token")
+    captchaToken = recaptchaToken
   }
 
   componentWillMount() {
@@ -50,7 +52,8 @@ class Contact extends Component {
     const name = document.getElementById('name').value
     const email = document.getElementById('email').value
     const message = document.getElementById('message').value
-    // const captcha = getInputVal('g-recaptcha-response')
+    const captcha = captchaToken
+    console.log(`Captcha token is: ${captchaToken}`)
 
     // if (
     //   captcha === undefined ||
@@ -63,9 +66,11 @@ class Contact extends Component {
         "name": name,
         "email": email,
         "subject": 'From CMBS.COM',
-        "message": message
-    //     "g-recaptcha-response": captcha
+        "message": message,
+        "g-recaptcha-response": captcha
       }
+      console.log(`Body content is: ${body}`)
+
     // console.log(`The recaptcha token is => ${captchaDemo}`)
     //   // reCAPTCHA verification
     //   recaptchaRequest(body)
@@ -130,7 +135,6 @@ class Contact extends Component {
               sitekey="6LfP2VoUAAAAAAsuI0k1S-sIMkGHQQfxpcYP2Wgw"
               onloadCallback={this.onLoadRecaptcha}
               verifyCallback={this.verifyCallback}
-              grecaptcha={grecaptchaObject}
             />
           </div>
 
