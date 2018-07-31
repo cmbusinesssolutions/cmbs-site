@@ -1,12 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { ReCaptcha } from 'react-recaptcha-google'
 //
 
 import firebaseDB from '../firebaseConfig';
+// import Recaptcha from '../components/Recaptcha'
+
 
 class Contact extends Component {
   constructor() {
     super()
     this.state = { messages: [] }
+    this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
+    this.verifyCallback = this.verifyCallback.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.captchaDemo) {
+      console.log("started, just a second...")
+      this.captchaDemo.reset();
+      this.captchaDemo.execute();
+    }
+  }
+  onLoadRecaptcha() {
+    if (this.captcha) {
+      this.captcha.reset();
+      this.captcha.execute();
+    }
+  }
+  verifyCallback(recaptchaToken) {
+    // Here you will get the final recaptchaToken!!!  
+    console.log(recaptchaToken, "<= your recaptcha token")
   }
 
   componentWillMount() {
@@ -41,6 +64,7 @@ class Contact extends Component {
         "message": message
     //     "g-recaptcha-response": captcha
       }
+    // console.log(`The recaptcha token is => ${captchaDemo}`)
     //   // reCAPTCHA verification
     //   recaptchaRequest(body)
     // }
@@ -91,9 +115,23 @@ class Contact extends Component {
 {/*       
           <div className="full g-recaptcha" data-sitekey="6LddKloUAAAAAPW9DJ_i3azVWbhyj63K_eScTIbv"
               style="transform:scale(0.7);-webkit-transform:scale(0.7);transform-origin:0 0;-webkit-transform-origin:0 0;"></div> */}
+          
           <p>
             <button type="submit" className="contact-submit-btn">Send Message</button>
           </p>
+          <div className="g-recaptcha">
+            <ReCaptcha
+              ref={(el) => { this.captcha = el; }}
+              size="invisible"
+              badge="inline"
+              render="explicit"
+              sitekey="6LfP2VoUAAAAAAsuI0k1S-sIMkGHQQfxpcYP2Wgw"
+              onloadCallback={this.onLoadRecaptcha}
+              verifyCallback={this.verifyCallback}
+              grecaptcha={grecaptchaObject}
+            />
+          </div>
+
         </form>
         <div className="contact-info">
           <h4 className="contact-info-heading">Email</h4>
