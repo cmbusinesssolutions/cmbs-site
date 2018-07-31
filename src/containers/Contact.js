@@ -45,12 +45,16 @@ class Contact extends Component {
     //   recaptchaRequest(body)
     // }
     /* Send the message to Firebase */
-    firebaseDB.database().ref('messages').push(body);
-    this.setState({ 
-      "name": '',
-      "email": '',
-      "message": ''
-    })
+    firebaseDB.database().ref('messages').push(body)
+    // Form submission acknowledgement and reset
+    document.getElementById('contact-us').reset()
+    document.querySelector('.form-submission-msg').style.display = 'block'
+    document.querySelector('.contact-form').style.display = 'none'
+    //Auto close contact form window
+    setTimeout(() => {
+      document.querySelector('.form-submission-msg').style.display = 'none'
+      document.querySelector('.contact-form').style.display = 'grid'
+    }, 5000)
   }
 
   render() {
@@ -60,10 +64,18 @@ class Contact extends Component {
           <h2>Contact Us</h2>
           <p>Reach out to us if you need help with your technology and data initiatives.</p>
         </div>
+        <div className="form-submission-msg">
+          <div className="form-submission-text">
+            <p>You message has been sent. We will contact you shortly.</p>
+            <p>Thank you!</p>
+          </div>
+          
+        </div>
         <form 
           onSubmit={this.submitForm.bind(this)}
+          id="contact-us"
           className="contact-form" 
-          name="contact-me">
+          name="contact-us">
           <p>
             <label htmlFor="name">Name*</label>
             <input type="text" name="name" id="name" required />

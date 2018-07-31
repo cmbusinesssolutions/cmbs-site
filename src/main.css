@@ -410,13 +410,19 @@ nav ul {
   transition: background-color 1s ease-out;
 }
 
-.alert {
-  text-align: center;
-  padding: 10px;
-  background: var(--accent-color);
-  color: var(--text-primary-color);
-  margin-bottom: 10px;
+.form-submission-msg {
+  background: var(--overlay-bg-color);
+  color: var(--overlay-text-color);
+  padding: 5% 0;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
   display: none;
+}
+
+.form-submission-text {
+  text-align: center;
+  font-size: 1.15rem;
+  padding: 10% 0;
 }
 
 /*----home----*/
