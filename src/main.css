@@ -425,6 +425,10 @@ nav ul {
   padding: 10% 0;
 }
 
+.g-recaptcha {
+  justify-self: center;
+}
+
 /*----home----*/
 #home {
   width: 100vw;
