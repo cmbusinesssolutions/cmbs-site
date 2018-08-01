@@ -2,8 +2,19 @@ import axios from 'axios'
 
 export default {
   getSiteData: () => ({
-    title: 'React Static',
+    title: 'CM Business Solutions',
+    lastBuilt: Date.now()
   }),
+  Document: ({ Html, Head, Body, children, siteData, renderMeta }) => (
+    <Html lang="en-US">
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#022140" />
+      </Head>
+      <Body>{children}</Body>
+    </Html>
+  ),
   getRoutes: async () => {
     const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
     return [
