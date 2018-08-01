@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 export default {
+  siteRoot: 'https://www.cmbstech.com/',
   getSiteData: () => ({
     title: 'CM Business Solutions',
     lastBuilt: Date.now()
