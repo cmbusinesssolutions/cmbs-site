@@ -1,6 +1,15 @@
-import React, { Component } from 'react'
-import { createClient } from 'contentful';
+import React, { Component, createElement } from 'react'
+import { createClient } from 'contentful'
+import marksy from 'marksy'
 //
+const getMarkup = field => {
+  if (!field) return null
+  const compile = marksy({
+    createElement,
+    elements: {}
+  })
+  return compile(field).tree
+}
 
  class About extends Component {
    constructor() {
@@ -42,14 +51,18 @@ import { createClient } from 'contentful';
   }
 
   render() {
+    let convertContent
+    if (this.state.problem) {
+      convertContent = getMarkup(this.state.problem)
+    }
     return (
       <div>
-        <title>About US | CM Business Solutions</title>
+        <title>CM Business Solutions | About US </title>
         <section id="about" className="section">
           <div className="container">
             <h1 className="section-title">{this.state.title}</h1>
             <div className="section-text">
-              <p>{this.state.problem}</p>
+              <p>{convertContent}</p>
               <p>{this.state.description}</p>
               <p>{this.state.valueProp}</p>
               <p>{this.state.cta}</p>
