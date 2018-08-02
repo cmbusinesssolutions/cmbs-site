@@ -51,21 +51,39 @@ const getMarkup = field => {
   }
 
   render() {
-    let convertContent
-    if (this.state.problem) {
-      convertContent = getMarkup(this.state.problem)
+    let title
+    let problem
+    let description
+    let valueProp
+    let cta
+
+    if (this.state.title) {
+      title = getMarkup(this.state.title)
     }
+    if (this.state.problem) {
+      problem = getMarkup(this.state.problem)
+    }
+    if (this.state.description) {
+      description = getMarkup(this.state.description)
+    }
+    if (this.state.valueProp) {
+      valueProp = getMarkup(this.state.valueProp)
+    }
+    if (this.state.cta) {
+      cta = getMarkup(this.state.cta)
+    }
+
     return (
       <div>
         <title>CM Business Solutions | About US </title>
         <section id="about" className="section">
           <div className="container">
-            <h1 className="section-title">{this.state.title}</h1>
+            <h1 className="section-title">{title}</h1>
             <div className="section-text">
-              <p>{convertContent}</p>
-              <p>{this.state.description}</p>
-              <p>{this.state.valueProp}</p>
-              <p>{this.state.cta}</p>
+              <p>{problem}</p>
+              <p>{description}</p>
+              <p>{valueProp}</p>
+              <p>{cta}</p>
             </div>
           </div>
         </section>
