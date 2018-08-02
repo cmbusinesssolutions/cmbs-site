@@ -3,7 +3,9 @@ import { withSiteData } from 'react-static'
 //
 
 export default withSiteData(() => (
-  <div id="home">
+  <div>
+    <title>CM Business Solutions</title>
+    <div id="home">
       <header id="intro">
         <h1 id="headline">CM Business Solutions</h1>
         <h4 id="subtitle">
@@ -15,5 +17,7 @@ export default withSiteData(() => (
           We work with organizations, large and small, in leveraging technology and data to solve problems and achieve business goals.
         </p>
       </div>
+    </div>
   </div>
+
 ))
