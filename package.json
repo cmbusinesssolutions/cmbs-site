@@ -17,6 +17,7 @@
     "axios": "^0.16.2",
     "contentful": "^6.1.2",
     "firebase": "^5.3.0",
+    "marksy": "^6.0.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-google-recaptcha": "^0.14.0",
