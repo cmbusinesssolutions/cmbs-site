@@ -528,6 +528,24 @@ section .container {
   /* border: 2px solid purple; */
 }
 
+h1.section-title {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 991px;
+  color: var(--dark-primary-color);
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+
+  /*----Alternate style----*/
+  /* color: var(--text-primary-color);
+  background: var(--dark-primary-color);
+  padding: 1rem; */
+  
+}
+
 h2.section-title {
   position: relative;
   font-size: 2rem;
