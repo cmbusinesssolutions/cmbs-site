@@ -20,3 +20,4 @@ yarn-debug.log*
 yarn-error.log*
 src/components/Nav-dev.js
 src/components/Recaptcha.js
+.env
