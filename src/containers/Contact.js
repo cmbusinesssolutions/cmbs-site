@@ -6,7 +6,7 @@ import firebaseDB from '../firebaseConfig';
 // import Recaptcha from '../components/Recaptcha'
 // const endpoint = "https://elbwov6546.execute-api.us-east-2.amazonaws.com/prod/recaptcha-ms-aws"
 // Dev Key
-const recaptchaSiteKey = "6LfP2VoUAAAAAAsuI0k1S-sIMkGHQQfxpcYP2Wgw"
+const recaptchaSiteKey = "6LePqmcUAAAAAOlTAqF83TRdkgl0sn10raY5bMr8"
 // Production Key
 // const recaptchaSiteKey = "6LePqmcUAAAAAOlTAqF83TRdkgl0sn10raY5bMr8"
 const endpoint = "https://fm087u0lii.execute-api.us-east-2.amazonaws.com/prod/recaptcha-request-api"
