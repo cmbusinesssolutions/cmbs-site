@@ -536,14 +536,7 @@ h1.section-title {
   text-transform: uppercase;
   max-width: 991px;
   color: var(--dark-primary-color);
-  padding-top: 5rem;
   padding-bottom: 1rem;
-
-  /*----Alternate style----*/
-  /* color: var(--text-primary-color);
-  background: var(--dark-primary-color);
-  padding: 1rem; */
-  
 }
 
 h2.section-title {
@@ -554,14 +547,7 @@ h2.section-title {
   text-transform: uppercase;
   max-width: 991px;
   color: var(--dark-primary-color);
-  padding-top: 5rem;
   padding-bottom: 1rem;
-
-  /*----Alternate style----*/
-  /* color: var(--text-primary-color);
-  background: var(--dark-primary-color);
-  padding: 1rem; */
-  
 }
 
 h3.section-subtitle {
