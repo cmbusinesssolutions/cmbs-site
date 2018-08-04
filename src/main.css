@@ -530,7 +530,7 @@ section .container {
 
 h1.section-title {
   position: relative;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
@@ -550,12 +550,22 @@ h2.section-title {
   padding-bottom: 1rem;
 }
 
-h3.section-subtitle {
-  font-weight: 500;
+h3.section-subtitle, .section-text h3 {
   color: var(--secondary-text-color);
   margin-bottom: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid #BDBDBD;
+}
+
+.section-text  ul {
+  margin-top: 0;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+} 
+
+.section-text  li {
+  list-style: initial;
+  margin-bottom: 0;
 }
 
 section .cta-group {
