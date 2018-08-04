@@ -46,7 +46,7 @@ class DataServices extends Component {
           cta: content.itemCallToAction,
           price: content.itemPrice,
           demo: content.itemDemo,
-          subheading: content.sectionSubHeading1
+          subheading1: content.sectionSubHeading1
 
         })
       })
@@ -85,7 +85,7 @@ class DataServices extends Component {
             <div className="section-text">
               {problem}
               {description}
-              <h3>{this.state.sectionSubHeading1}</h3>
+              <h3>{this.state.subheading1}</h3>
               {valueProp}
               {cta}
             </div>
