@@ -2,6 +2,7 @@ import React, { Component, createElement } from 'react'
 import { createClient } from 'contentful'
 import marksy from 'marksy'
 //
+
 const getMarkup = field => {
   if (!field) return null
   const compile = marksy({
@@ -35,7 +36,6 @@ const getMarkup = field => {
     client.getEntry('11cBA9fgCgUCSKGcOwsgCU')
       .then(entry => {
         const content = entry.fields
-        console.log(content)
         this.setState({ 
           title: content.itemName,
           problem: content.problemDescription,
@@ -46,8 +46,8 @@ const getMarkup = field => {
           price: content.itemPrice,
           demo: content.itemDemo,  
         })
-      }).catch(err => console.log(`Retrieving entry.fieldsful data error: ${err}`))
-
+      })
+      .catch(err => console.log(`Retrieving entry.fieldsful data error: ${err}`))
   }
 
   render() {
@@ -80,10 +80,10 @@ const getMarkup = field => {
           <div className="container">
             <h1 className="section-title">{title}</h1>
             <div className="section-text">
-              <p>{problem}</p>
-              <p>{description}</p>
-              <p>{valueProp}</p>
-              <p>{cta}</p>
+              {problem}
+              {description}
+              {valueProp}
+              {cta}
             </div>
           </div>
         </section>
