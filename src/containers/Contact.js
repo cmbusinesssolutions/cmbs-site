@@ -155,7 +155,7 @@ class Contact extends Component {
         </form>
         <div className="contact-info">
           <h4 className="contact-info-heading">Email</h4>
-          <p><a href="mailto:contact@wilfredmorgan.com">contact@wilfredmorgan.com</a></p>
+          <p><a href="mailto:info@cmbstech.com">info@cmbstech.com</a></p>
           <h4 className="contact-info-heading">Locations</h4>
           <p>Orlando, Florida<br />
             <a href="tel:1-407-986-0945">+1 407 986 0945</a>
