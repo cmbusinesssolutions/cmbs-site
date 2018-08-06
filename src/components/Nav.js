@@ -77,7 +77,7 @@ class Nav extends Component {
 
         <div id="side-menu" className="side-nav">
           <div className="side-menu-header">
-            <Link exact to="/" className="brand">CM Business Solutions</Link>     
+            <Link exact to="/" className="brand" onClick={this.closeSideMenu}>CM Business Solutions</Link>     
             <FontAwesomeIcon icon={faTimesCircle} id="close-side-menu" onClick={this.closeSideMenu} />
           </div>
           <hr />
