@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Link } from 'react-static'
+import { Link } from 'react-static'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
