@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { createClient } from 'contentful'
+import { Link } from 'react-static'
 //
 
 const flattened = (data, name) => {
@@ -52,7 +53,7 @@ class Home extends Component {
               </p>
             </div>
             <div className="cta-group">
-              <button className="cta-btn">Learn More</button>
+              <button className="cta-btn"><Link to="#services" className="link-design">Learn More</Link></button>
             </div>
           </div>
           <section id="services" className="section">

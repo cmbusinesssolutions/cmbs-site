@@ -177,6 +177,11 @@ nav ul {
   list-style: none;
 }
 
+.link-design {
+  text-decoration: none;
+  color: var(--text-primary-color);
+}
+
 .navbar-nav {
   text-align: right;
   display: flex;
