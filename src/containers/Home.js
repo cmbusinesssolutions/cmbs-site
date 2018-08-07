@@ -57,22 +57,24 @@ class Home extends Component {
             </div>
           </div>
           <section id="services" className="section">
-            <div className="section-text">
+            <div className="container">
               <h2 className="section-title">Services</h2>
-              <div className="services-wrapper">
-                <div className="services-text">
-                  <h4 className="service-name">{dev.itemName}</h4>
-                  <p>{dev.itemSummary}</p>
+              <div className="section-text">
+                <div className="services-wrapper">
+                  <div className="services-text">
+                    <h4 className="service-name">{dev.itemName}</h4>
+                    <p>{dev.itemSummary}</p>
+                  </div>
+                  <div className="services-text">
+                    <h4 className="service-name">{dataSvcs.itemName}</h4>
+                    <p>{dataSvcs.itemSummary}</p>
+                  </div>
+                  <div className="services-text">
+                    <h4 className="service-name">{cio.itemName}</h4>
+                    <p>{cio.itemSummary}</p>
+                  </div>
                 </div>
-                <div className="services-text">
-                  <h4 className="service-name">{dataSvcs.itemName}</h4>
-                  <p>{dataSvcs.itemSummary}</p>
-                </div>
-                <div className="services-text">
-                  <h4 className="service-name">{cio.itemName}</h4>
-                  <p>{cio.itemSummary}</p>
-                </div>
-              </div>
+              </div>              
             </div>
           </section>
         </div>
