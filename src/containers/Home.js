@@ -11,7 +11,13 @@ const flattened = (data, name) => {
 class Home extends Component {
   constructor() {
     super()
-    this.state = { entries: null }
+    this.state = { 
+      company: null,
+      tagline: null,
+      website: null, 
+      mission: null,
+      entries: null 
+    }
   }
 
   componentDidMount() {
@@ -19,6 +25,19 @@ class Home extends Component {
       space: 'twlasw34206y',
       accessToken: 'd4d47521c5c779f043334df8ccbe249ded24ffcbd6755a5034cfb865d02e0058'
     })
+
+    client.getEntry('6WvEYz69e8oaE0eYmeKs2S')
+      .then(entry => {
+        const content = entry.fields
+        this.setState({
+          company: content.companyName,
+          tagline: content.tagline,
+          website: content.companyWebsite,
+          mission: content.companyMission
+        })
+        console.log('Retrieve company info: ', this.state)
+      })
+      .catch(err => console.log(`Retrieving entry.fieldsful data error: ${err}`))
 
     client.getEntries({ 'content_type': 'productAndService'})
       .then((response) => {
@@ -36,20 +55,20 @@ class Home extends Component {
       dev = flattened(this.state.entries, "Software Development")
       dataSvcs = flattened(this.state.entries, "Data Engineering & Analytics")
       cio = flattened(this.state.entries, "Virtual CIO")
-
+      console.log('Most recent state: ', this.state)
       return (
         <div>
           <title>CM Business Solutions</title>
           <div id="home">
             <header id="intro">
-              <h1 id="headline">CM Business Solutions</h1>
+              <h1 id="headline">{this.state.company}</h1>
               <h4 id="subtitle">
-                We ensure you’re doing the RIGHT THINGS, in the RIGHT WAY, at the RIGHT TIME.
+                {this.state.tagline}
               </h4>
             </header>
             <div id="tagline">
               <p>
-                We work with organizations, large and small, in leveraging technology and data to solve problems and achieve business goals.
+                
               </p>
             </div>
             <div className="cta-group">
