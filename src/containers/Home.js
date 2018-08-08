@@ -64,17 +64,31 @@ class Home extends Component {
                   <div className="services-text">
                     <h4 className="service-name">{dev.itemName}</h4>
                     <p>{dev.itemSummary}</p>
-                    <button className="info-btn"><Link to="/software_dev" className="link-design">Learn More</Link></button>
+                    <div className="cta-group">
+                      <button className="info-btn">
+                        <Link to="/software_dev" className="link-design">Learn More</Link>
+                      </button>
+                    </div>
                   </div>
                   <div className="services-text">
                     <h4 className="service-name">{dataSvcs.itemName}</h4>
                     <p>{dataSvcs.itemSummary}</p>
-                    <button className="info-btn"><Link to="/data_services" className="link-design">Learn More</Link></button>
+                    <div className="cta-group">
+                      <button className="info-btn">
+                        <Link to="/data_services" className="link-design">Learn More</Link>
+                      </button>
+                    </div>
+                    
                   </div>
                   <div className="services-text">
                     <h4 className="service-name">{cio.itemName}</h4>
                     <p>{cio.itemSummary}</p>
-                    <button className="info-btn"><Link to="/cio" className="link-design">Learn More</Link></button>
+                    <div className="cta-group">
+                      <button className="info-btn">
+                        <Link to="/cio" className="link-design">Learn More</Link>
+                      </button>
+                    </div>
+
                   </div>
                 </div>
               </div>              
