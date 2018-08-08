@@ -222,7 +222,7 @@ nav ul {
 .dropdown:hover {background-color: var(--dark-primary-color);}
 
 .navbar-nav a:hover, .navbar-nav a:active,
-.nav-link.active {
+.nav-link.active, .drop-btn.active {
   border-bottom: 2px solid var(--text-primary-color);
   border-radius: 0%;
   /* background-color: var(--text-primary-color);
@@ -419,7 +419,7 @@ nav ul {
 #home {
   margin: 0 auto;
   width: 100vw;
-  height: auto;
+  height: 100vh;
   overflow: hidden; 
   color: var(--text-primary-color);
   background: var(--default-primary-color);
@@ -435,8 +435,9 @@ nav ul {
 }
 
 #headline {
-  font-size: 3.5rem;
-  text-transform: uppercase;
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-shadow: 2px 2px var(--overlay-bg-color)
 }
 
 #subtitle {
@@ -444,6 +445,7 @@ nav ul {
 }
 
 #tagline {
+  color: var(--overlay-text-color);
   font-size: 1.5rem;
 }
 
