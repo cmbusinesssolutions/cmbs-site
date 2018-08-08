@@ -1,6 +1,6 @@
 {
   "name": "cmbs-site",
-  "version": "1.12.1",
+  "version": "1.12.2",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
