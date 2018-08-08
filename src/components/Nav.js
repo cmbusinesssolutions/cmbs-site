@@ -60,9 +60,9 @@ class Nav extends Component {
           <ul className="navbar-nav">
             <li><Link exact to="/" className="nav-link">Home</Link></li>
             <li className="dropdown">
-              <a className="nav-link dropbtn">Services{' '}
+              <Link to="#services" className="nav-link dropbtn">Services{' '}
                 <FontAwesomeIcon icon={faCaretDown} size='lg' />
-              </a>
+              </Link>
               <div className="dropdown-content">
                 <Link to="/software_dev">Software Development</Link>
                 <Link to="/data_services">Data Engineering & Analytics</Link>
