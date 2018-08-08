@@ -61,14 +61,14 @@ class Home extends Component {
           <title>CM Business Solutions</title>
           <div id="home">
             <header id="intro">
-              <h1 id="headline">{this.state.company}</h1>
-              <h4 id="subtitle">
-                {this.state.tagline}
-              </h4>
+              <h1 id="headline">{this.state.tagline}</h1>
+              {/* <h4 id="subtitle">
+                
+              </h4> */}
             </header>
             <div id="tagline">
               <p>
-                
+                {this.state.mission}
               </p>
             </div>
             <div className="cta-group">
