@@ -596,6 +596,7 @@ h3.section-subtitle, .section-text h3 {
 }
 
 .service-name {
+  text-align: center;
   color: var(--default-primary-color);
   margin-bottom: 0.5rem;
 }
