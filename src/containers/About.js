@@ -17,6 +17,7 @@ const getMarkup = field => {
      super()
      this.state = { 
        title: null,
+       summary: null,
        problem: null,
        valueProp: null,
        description: null,
@@ -33,11 +34,16 @@ const getMarkup = field => {
       accessToken: 'd4d47521c5c779f043334df8ccbe249ded24ffcbd6755a5034cfb865d02e0058'
     })
 
+    client.getAsset('4QAIiywM6AOoC6W6UiMwkU')
+      .then((asset) => console.log('The asset is: ', asset))
+      .catch(console.error)
+
     client.getEntry('11cBA9fgCgUCSKGcOwsgCU')
       .then(entry => {
         const content = entry.fields
         this.setState({ 
           title: content.itemName,
+          summary: content.itemSummary,
           problem: content.problemDescription,
           valueProp: content.valueProposition,
           description: content.itemDescription,
@@ -46,6 +52,7 @@ const getMarkup = field => {
           price: content.itemPrice,
           demo: content.itemDemo,  
         })
+        console.log(`Item media is: `, this.state.media)
       })
       .catch(err => console.log(`Retrieving entry.fieldsful data error: ${err}`))
   }
@@ -80,9 +87,9 @@ const getMarkup = field => {
           <div className="container">
             <h1 className="section-title">{title}</h1>
             <div className="section-text">
-              {problem}
-              {description}
+              {this.state.summary}
               {valueProp}
+              {description}
               {cta}
             </div>
           </div>
