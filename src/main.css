@@ -935,12 +935,6 @@ p.section-text {
 
 /*------Responsive design------*/
 /* LARGE SCREENS */
-@media only screen and (min-width: 991px) {
-  h2.section-title {
-    font-size: 1.85rem;
-  }
-
-}
 
 @media only screen and (max-width: 991px) {
   header p {
@@ -951,11 +945,7 @@ p.section-text {
 
 /* MEDIUM SCREENS */
 @media only screen and (min-width: 568px) {
-  /*----sections----*/
-  h2.section-title {
-    font-size: 1.65rem;
-  }
-
+  /*----Contact Us---*/
   .contact-info {
     border-left: 0.5px solid var(--overlay-text-color);
   }
@@ -987,71 +977,12 @@ p.section-text {
 
 }
 
-@media only screen and (max-width: 868px) {
-
-    /*----projects----*/
-  .project-items {
-    grid-template-columns: repeat(2, auto);
-  }
-}
-
-
-@media only screen and (min-width: 768px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  h2 {
-    font-size: 1.50rem;
-  }
-
-  h3 {
-    font-size: 1.25rem;
-  }
-
-  h4 {
-    font-size: 1rem;
-  }
-
-  body {
-    font-size: 1rem;
-  }
-
-  header {
-    width: 96%;
-    margin: 30px auto 100px auto;
-    text-align: left;
-  }
-
-    /*----sections----*/
-  h2.section-title {
-    font-size: 1.65rem;
-  }
-
-}
-
 /* SMALL SCREENS */
 @media only screen and (max-width: 568px) {
-  h1 {
-    font-size: 1.25rem;
-  }
-
-  h2 {
-    font-size: 1.15rem;
-  }
-
-  h3 {
-    font-size: 1rem;
-  }
-
-  h4 {
-    font-size: 0.95rem;
-  }
-
   body {
     font-size: 0.95rem;
   }
-
+  
   nav {
     padding: 0 0.5rem;
   }
@@ -1111,8 +1042,12 @@ p.section-text {
   }
 
   /*----sections----*/
+  h1.section-title {
+    font-size: 1.7rem;
+  }
+
   h2.section-title {
-    font-size: 1.5rem;
+    font-size: 1.55rem;
   }
 
   .section-text {
@@ -1133,9 +1068,9 @@ p.section-text {
   }
 
   /*----services----*/
-.services-wrapper {
-  grid-template-columns: 1fr;
-}
+  .services-wrapper {
+    grid-template-columns: 1fr;
+  }
 
   /*----projects----*/
   .project-items {
@@ -1145,22 +1080,6 @@ p.section-text {
   .card, .card ul {
     font-size: 0.9rem;
   }
-
-  /*----skills----*/
-  .list-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /*----work----*/
-  .role-title {
-    font-size: 0.9rem;
-  }
-
- .role-description ul li, 
- .role-accomplishments ul li {
-   margin-left: 0.5rem;
-   font-size: 0.92rem;
- } 
 
   /*---footer----*/
   .footer {
@@ -1201,18 +1120,4 @@ p.section-text {
     display: none;
   }
 
-}
-
-@media only screen and  (max-width: 400px) {
-  /*----sections----*/
-  h2.section-title {
-    font-size: 1.35rem;
-  }
-}
-
-@media only screen and (max-width: 368px) {
-  /*----sections----*/
-  h2.section-title {
-    font-size: 1.25rem;
-  }
 }
