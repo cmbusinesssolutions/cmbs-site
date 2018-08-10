@@ -106,7 +106,7 @@ class Contact extends Component {
       <div id="contact" className="contact-form-container">
         <title>CM Business Solutions | Contact Us</title>
         <div className="contact-form-heading">
-          <h2>Contact Us</h2>
+          <h2 className="contact-section-title">Contact Us</h2>
           <p>Reach out to us if you need help with your technology and data initiatives.</p>
         </div>
         <div className="form-submission-msg">

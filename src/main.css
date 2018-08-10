@@ -321,6 +321,18 @@ nav ul {
 }
 
 /*-----contact form------*/
+.contact-section-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 991px;
+  color: var(--text-primary-color);
+  padding: 1rem 0;
+  padding-top: 3rem;
+  margin: 0 auto;
+}
+
 .contact-form-container {
   width: auto;
   height: 100%;
@@ -332,6 +344,8 @@ nav ul {
 }
 
 .contact-form-heading {
+  text-align: center;
+  font-size: 1.15rem;
   color: var(--text-primary-color);
   grid-column: span 2;
   padding: 2rem;
@@ -996,12 +1010,17 @@ p.section-text {
   #menu-small {display: block;}
 
   /*----Contact Form-----*/
+  .contact-section-title {
+    font-size: 1.6rem;
+  }
+
   .contact-form-container {
     display: grid;
     grid-template-columns: 1fr;
   }
   
   .contact-form-heading {
+    font-size: 1rem;
     grid-column: span 1;
   }
 
