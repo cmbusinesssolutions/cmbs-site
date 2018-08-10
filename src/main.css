@@ -445,11 +445,12 @@ nav ul {
 
 #intro {
   margin: 1rem 0;
+  padding-top: 4rem;
   text-align: center;
 }
 
 #headline {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-transform: capitalize;
   text-shadow: 2px 2px var(--overlay-bg-color)
 }
@@ -460,7 +461,8 @@ nav ul {
 
 #tagline {
   color: var(--overlay-text-color);
-  font-size: 1.5rem;
+  font-size: 1.65rem;
+  text-align: center;
 }
 
 #home .cta-group {
@@ -1042,6 +1044,10 @@ p.section-text {
     padding-bottom: 7rem;
   }
 
+  #intro {
+    text-align: left;
+  }
+
   #headline {
     font-size: 1.45rem;
 
@@ -1053,6 +1059,7 @@ p.section-text {
   #tagline {
     padding-top: 1rem;
     font-size: 1rem;
+    text-align: left;
   }
 
   #home .cta-btn,
